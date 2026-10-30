@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azanchi — Notes that take themselves.</title>
+    <meta
+      name="description"
+      content="Download Azanchi for macOS or Windows. The AI meeting assistant for Nigeria, Ghana and Kenya records your Zoom, Teams and Meet calls, writes live notes while people are still talking, and hands you the follow-up before you're back at your desk."
+    />
+    <meta name="theme-color" content="#f5f1e8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:title" content="Azanchi — Notes that take themselves." />
+    <meta
+      property="og:description"
+      content="Download for macOS or Windows. Live notes during the meeting, the follow-up before you're back at your desk. Built for Zoom, Teams and Meet in Nigeria, Ghana and Kenya."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Azanchi — Notes that take themselves." />
+    <meta property="og:site_name" content="Azanchi" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Azanchi — Notes that take themselves." />
+    <meta
+      name="twitter:description"
+      content="Download for macOS or Windows. Live notes during the meeting, the follow-up before you're back at your desk."
+    />
+    <meta name="twitter:image" content="/og.png" />
+    <meta name="twitter:image:alt" content="Azanchi — Notes that take themselves." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Azanchi",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "macOS 14+, Windows",
+        "softwareVersion": "0.1.0",
+        "description": "Azanchi is a desktop AI meeting assistant for Nigeria, Ghana and Kenya. It records Zoom, Teams and Google Meet calls with a visible recording indicator, writes live notes during the meeting, and turns the transcript into a follow-up.",
+        "offers": [
+          { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "NGN" },
+          { "@type": "Offer", "name": "Pro", "price": "16500", "priceCurrency": "NGN" },
+          { "@type": "Offer", "name": "Business", "price": "28500", "priceCurrency": "NGN" }
+        ]
+      }
+    </script>
+    <script>
+      // Resolve the theme before paint so the page never flashes the wrong paper.
+      (function () {
+        try {
+          var param = new URLSearchParams(window.location.search).get("theme");
+          var saved = localStorage.getItem("azanchi.theme");
+          var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = param === "light" || param === "dark" ? param : saved || (dark ? "dark" : "light");
+          document.documentElement.dataset.theme = theme;
+          if ("IntersectionObserver" in window) {
+            document.documentElement.classList.add("reveal-ready");
+          }
+        } catch (e) {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+node_modules
+dist
+.npm-cache
+.DS_Store
+*.local
+.screens
+.chrome-profile
+.chrome-profile-mobile
+tsconfig.tsbuildinfo
+
+.env
+.env.*
+!.env.example
