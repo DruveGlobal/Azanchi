@@ -98,9 +98,8 @@ export function Nav() {
           >
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
           </button>
-          <a className="nav__signin" href="#download">
-            Sign in
-          </a>
+          {/* Sign in is hidden until the desktop auth flow is wired. */}
+          {/* <a className="nav__signin" href="#download">Sign in</a> */}
           <a className="btn btn--primary btn--sm nav__cta" href="#download">
             <Download size={14} />
             Download

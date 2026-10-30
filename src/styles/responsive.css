@@ -44,6 +44,10 @@
     --nav-h: 64px;
   }
 
+  .hero__stage-wrap {
+    margin-top: 60px;
+  }
+
   .nav__links,
   .nav__signin,
   .nav__cta {
@@ -225,10 +229,15 @@
   }
 
   .hero__chip {
-    top: -20px;
-    right: 8px;
-    transform: scale(0.94);
-    transform-origin: top right;
+    top: -42px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) scale(0.94);
+    transform-origin: top center;
+  }
+
+  .hero__stage-wrap {
+    margin-top: 60px;
   }
 
   .hero__stage-foot {
@@ -290,7 +299,7 @@
   }
 
   .hero__stage-wrap {
-    margin-top: 44px;
+    margin-top: 60px;
   }
 
   .hero__stage-glow {
@@ -522,14 +531,15 @@
   }
 
   .hero__stage-wrap {
-    margin-top: 38px;
+    margin-top: 52px;
   }
 
   .hero__chip {
-    top: -17px;
-    right: 3px;
-    transform: scale(0.82);
-    transform-origin: top right;
+    top: -36px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) scale(0.82);
+    transform-origin: top center;
   }
 
   .rec-chip__title {

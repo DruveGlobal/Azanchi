@@ -398,7 +398,7 @@
 
 .hero__stage-wrap {
   position: relative;
-  margin-top: clamp(36px, 4.8vw, 56px);
+  margin-top: clamp(42px, 5.2vw, 62px);
 }
 
 .hero__stage {
@@ -432,9 +432,12 @@
 
 .hero__chip {
   position: absolute;
-  top: -26px;
-  right: -18px;
+  top: -46px;
+  left: 50%;
+  right: auto;
   z-index: 5;
+  transform: translateX(-50%);
+  transform-origin: top center;
 }
 
 .hero__stage-foot {
