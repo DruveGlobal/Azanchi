@@ -38,8 +38,9 @@ export function Hero() {
         </h1>
 
         <p className="hero__lead balance" data-reveal style={{ "--reveal-delay": "140ms" } as CSSProperties}>
-          Azanchi sits in your Zoom, Teams and Meet calls, writes what matters while people are still
-          talking, and hands you the follow-up before you are back at your desk.
+          Azanchi runs on your desktop while you’re in Zoom, Teams or Google Meet. It never joins the
+          call — it writes what matters while people are still talking, and hands you the follow-up
+          before you’re back at your desk.
         </p>
 
         <div className="hero__cta" data-reveal style={{ "--reveal-delay": "210ms" } as CSSProperties}>
@@ -82,7 +83,7 @@ export function Hero() {
       </div>
 
       <div className="container hero__meets" data-reveal>
-        <span className="eyebrow eyebrow--plain">Meets you in</span>
+        <span className="eyebrow eyebrow--plain">Works alongside</span>
         <div className="meets">
           {MEETS.map(({ icon: Icon, label }) => (
             <span className="meets__item" key={label}>

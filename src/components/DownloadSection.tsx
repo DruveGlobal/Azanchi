@@ -87,8 +87,8 @@ export function DownloadSection() {
             The work is already done.
           </h2>
           <p>
-            Azanchi runs on your Mac or Windows machine, inside the calls you already have. Pick your
-            build below — free plan, 120 minutes a month, no card.
+            Azanchi runs on your Mac or Windows machine while you’re in the calls you already have.
+            Pick your build below — free plan, 120 minutes a month, no card.
           </p>
           <div className="download__points">
             <span>

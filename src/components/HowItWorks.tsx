@@ -85,7 +85,7 @@ const STEPS = [
     n: "01",
     label: "Download",
     title: "The app, then four seconds to sign in.",
-    body: "Pick the Mac or Windows build. Google sign-in, no password, no model to download, no bot to invite. Azanchi is in the room before the small talk ends.",
+    body: "Pick the Mac or Windows build. Google sign-in, no password, no model to download, no bot to invite. Azanchi is ready before the small talk ends.",
     art: <StepArtOne />,
   },
   {
