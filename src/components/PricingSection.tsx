@@ -1,6 +1,8 @@
 import { useState } from "react";
 import type { CSSProperties } from "react";
 import { ArrowRight, Check, Download, Lock, Mail, Shield, Wave } from "./Icons";
+import { mailto } from "../data/contact";
+import { CURRENCIES, detectCurrency, formatPrice } from "../data/currency";
 
 type Period = "monthly" | "annual";
 
@@ -8,7 +10,7 @@ type Plan = {
   id: string;
   name: string;
   forWho: string;
-  price: Record<Period, string>;
+  price: Record<Period, number>;
   period: Record<Period, string>;
   note: string | Record<Period, string>;
   summary: string;
@@ -23,7 +25,7 @@ const PLANS: Plan[] = [
     id: "free",
     name: "Free",
     forWho: "For one meeting a week",
-    price: { monthly: "₦0", annual: "₦0" },
+    price: { monthly: 0, annual: 0 },
     period: { monthly: "/month", annual: "/month" },
     note: "Free for good",
     summary: "120 minutes of notes a month. Enough to find out whether Azanchi is right for you.",
@@ -40,7 +42,7 @@ const PLANS: Plan[] = [
     id: "pro",
     name: "Pro",
     forWho: "For anyone in meetings all day",
-    price: { monthly: "₦16,500", annual: "₦181,500" },
+    price: { monthly: 16500, annual: 181500 },
     period: { monthly: "/month", annual: "/year" },
     note: { monthly: "About an hour of meetings every working day", annual: "One month free" },
     summary: "1,200 minutes a month — about an hour of meetings every working day.",
@@ -58,7 +60,7 @@ const PLANS: Plan[] = [
     id: "business",
     name: "Business",
     forWho: "For a team that meets together",
-    price: { monthly: "₦28,500", annual: "₦313,500" },
+    price: { monthly: 28500, annual: 313500 },
     period: { monthly: "/seat /month", annual: "/seat /year" },
     note: { monthly: "1,500 minutes per user, pooled across the team", annual: "One month free, per seat" },
     summary: "1,500 minutes a month per user, and one place for the whole team's notes.",
@@ -69,7 +71,7 @@ const PLANS: Plan[] = [
       "Invoiced billing in ₦, GH₵ or KSh",
     ],
     cta: "Talk to sales",
-    href: "mailto:hello@azanchi.africa?subject=Azanchi%20Business",
+    href: mailto("Azanchi Business"),
   },
 ];
 
@@ -82,6 +84,7 @@ const INCLUDED = [
 
 export function PricingSection() {
   const [period, setPeriod] = useState<Period>("monthly");
+  const [currency] = useState(detectCurrency);
 
   return (
     <section className="section pricing" id="pricing">
@@ -93,8 +96,8 @@ export function PricingSection() {
           </div>
           <div className="section-head__aside">
             <p className="lead">
-              120 minutes every month, free for good. Prices in naira; Ghana and Kenya are charged in
-              GH&#8373; and KSh at the day&rsquo;s rate.
+              120 minutes every month, free for good. Ghana and Kenya are charged in GH&#8373; and
+              KSh at the rate shown at checkout.
             </p>
             <div className="segmented" role="group" aria-label="Billing period" data-test="period-toggle">
               <button
@@ -134,7 +137,7 @@ export function PricingSection() {
 
               <div className="plan__pricing">
                 <div className="plan__price serif">
-                  {plan.price[period]}
+                  {formatPrice(plan.price[period], currency)}
                   <small>{plan.period[period]}</small>
                 </div>
                 <p className="plan__note">
@@ -179,8 +182,14 @@ export function PricingSection() {
             ))}
           </div>
           <p className="pricing-legal">
-            Download free, then upgrade inside the app · secured by Paystack · cancel any time.
-            Prices in naira; annual is one month free.
+            Prices shown in {CURRENCIES[currency].name}
+            {currency === "NGN" ? "" : `, billed in ${CURRENCIES[currency].symbol} at the rate shown at checkout`}. Ghana:{" "}
+            {formatPrice(16500, "GHS")} a month · Kenya: {formatPrice(16500, "KES")} a month, converted
+            at the rate shown at checkout, tax added at checkout.
+          </p>
+          <p className="pricing-legal">
+            Download free, then upgrade inside the app · secured by Paystack · cancel any time ·
+            annual is one month free.
           </p>
         </div>
       </div>

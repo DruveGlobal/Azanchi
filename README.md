@@ -112,9 +112,17 @@ links at your release host before launch; sign-in happens inside the desktop app
 ## Before shipping
 
 - Add the signed/notarised macOS builds and the Windows installer (or set the env URLs above).
-- Confirm the pricing and claim copy with the product team.
+- Make sure `src/data/contact.ts` points at an inbox that actually exists on a domain we own
+  (`hello@azanchi.com` today). There is no contact form, so a dead inbox is a dead contact path.
+- The legal pages are static HTML at `public/privacy.html` and `public/terms.html`, not React routes, so
+  they keep working for verification crawlers and every static host; nginx here has no
+  directory-index handling, so the flat `.html` URLs are deliberate. They are generated from the signed Word documents;
+  re-check them when counsel revises those documents.
+- Confirm the pricing and claim copy with the product team, including the GH₵/KSh display
+  rates in `src/data/currency.ts` (they are conversions, not list prices).
 - Add analytics consent if you run PostHog.
-- Set absolute `og:image` / `og:url` values for the production domain in `index.html`.
+- Share cards use `public/og.png` (1200×630; source `preview/og-card.html`). Regenerate it if the
+  promise line changes, and keep the `og:image` URL absolute.
 
 ## Accessibility & performance
 

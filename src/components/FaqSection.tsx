@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { CSSProperties } from "react";
 import { Plus } from "./Icons";
+import { CONTACT_EMAIL, mailto } from "../data/contact";
 
 const FAQS = [
   {
@@ -49,8 +50,8 @@ export function FaqSection() {
           <p className="lead">
             If yours is not here, write to us. A person answers, usually the same day.
           </p>
-          <a className="btn btn--secondary" href="mailto:hello@azanchi.africa">
-            hello@azanchi.africa
+          <a className="btn btn--secondary" href={mailto()}>
+            {CONTACT_EMAIL}
           </a>
         </div>
 

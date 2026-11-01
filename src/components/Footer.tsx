@@ -1,4 +1,5 @@
 import { ArrowDown, LogoMark } from "./Icons";
+import { CONTACT_EMAIL, mailto } from "../data/contact";
 
 const COLUMNS = [
   {
@@ -17,15 +18,16 @@ const COLUMNS = [
     links: [
       { label: "What we believe", href: "#quote" },
       { label: "FAQ", href: "#faq" },
-      { label: "hello@azanchi.africa", href: "mailto:hello@azanchi.africa" },
-      { label: "Talk to sales", href: "mailto:hello@azanchi.africa?subject=Azanchi%20Business" },
+      { label: CONTACT_EMAIL, href: mailto() },
+      { label: "Talk to sales", href: mailto("Azanchi Business") },
     ],
   },
   {
     title: "Trust",
     links: [
       { label: "Recording & consent", href: "#trust" },
-      { label: "Privacy & data", href: "#trust" },
+      { label: "Privacy Policy", href: "/privacy.html" },
+      { label: "Terms of Service", href: "/terms.html" },
       { label: "Export & delete", href: "#trust" },
       { label: "Payments", href: "#pricing" },
     ],
