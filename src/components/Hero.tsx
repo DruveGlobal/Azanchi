@@ -34,7 +34,7 @@ export function Hero() {
         </a>
 
         <h1 className="hero__h serif balance" data-reveal style={{ "--reveal-delay": "70ms" } as CSSProperties}>
-          Notes that take <em>themselves</em>.
+          Meeting notes that write <em>themselves</em>.
         </h1>
 
         <p className="hero__lead balance" data-reveal style={{ "--reveal-delay": "140ms" } as CSSProperties}>

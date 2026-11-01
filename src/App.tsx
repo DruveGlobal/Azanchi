@@ -11,9 +11,13 @@ import { FaqSection } from "./components/FaqSection";
 import { DownloadSection } from "./components/DownloadSection";
 import { Footer } from "./components/Footer";
 import { useReveal } from "./hooks/useSite";
+import { NotFound } from "./components/NotFound";
+import { isPublishedPath } from "./lib/route";
 
 export default function App() {
   useReveal();
+
+  if (!isPublishedPath(window.location.pathname)) return <NotFound />;
 
   return (
     <>

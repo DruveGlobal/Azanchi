@@ -121,8 +121,32 @@ links at your release host before launch; sign-in happens inside the desktop app
 - Confirm the pricing and claim copy with the product team, including the GH₵/KSh display
   rates in `src/data/currency.ts` (they are conversions, not list prices).
 - Add analytics consent if you run PostHog.
+- Submit `https://azanchi.com/sitemap.xml` in Search Console once the 404 behaviour is live.
 - Share cards use `public/og.png` (1200×630; source `preview/og-card.html`). Regenerate it if the
   promise line changes, and keep the `og:image` URL absolute.
+
+## Server
+
+The page is a single HTML entry point, so the host must not answer *every* path with
+`index.html`. Without a real 404, `/robots.txt` and `/sitemap.xml` are served the homepage and
+every typo is a 200 — which is why search engines could not catalogue the site. In the nginx
+`server` block:
+
+```nginx
+location = /privacy { return 301 /privacy.html; }
+location = /terms   { return 301 /terms.html; }
+
+location / {
+  try_files $uri $uri/ =404;
+}
+
+error_page 404 /404.html;
+```
+
+`robots.txt`, `sitemap.xml` and `404.html` are real files in `public/`, so they are served
+directly once the fallback is gone. The app also renders its own 404 for any unpublished path,
+so a host that still falls back to `index.html` shows the not-found page rather than the
+homepage.
 
 ## Accessibility & performance
 

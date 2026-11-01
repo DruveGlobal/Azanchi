@@ -44,7 +44,7 @@ export function Footer() {
               <LogoMark size={32} />
               <span className="brand__word">Azanchi</span>
             </a>
-            <p className="footer__tag serif">Notes that take themselves.</p>
+            <p className="footer__tag serif">Meeting notes that write themselves.</p>
             <p className="footer__blurb">
               The AI meeting assistant for Nigeria, Ghana and Kenya. Live notes during the call, the
               follow-up before you are back at your desk.
