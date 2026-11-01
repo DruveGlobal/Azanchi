@@ -33,7 +33,7 @@ Ada`,
 - Annual plan ships before the Lagos cohort — Oct 28 — Ada Obi
 - Ghana bills in GH₵ at the day's rate — Oct 28 — Yewande Cole
 - Free tier stays at 120 minutes a month — Oct 28 — the room`,
-  summary: `Azanchi's free tier stays at 120 minutes a month. Pro is 1,200 minutes at ₦16,500; Business is 1,500 minutes per user at ₦28,500 per seat. The annual plan must ship before the Lagos cohort. Ghana and Kenya are billed in local currency at the day's rate, not converted at checkout.`,
+  summary: `Azanchi's free tier stays at 120 minutes a month. Pro is unlimited minutes at ₦16,500; Business is unlimited minutes per seat at ₦28,500. The annual plan must ship before the Lagos cohort. Ghana and Kenya are billed in local currency at the day's rate, not converted at checkout.`,
 };
 
 function OutputEmail() {
@@ -135,7 +135,7 @@ function OutputSummary() {
     <div className="out">
       <p className="out-summary">
         Azanchi&rsquo;s free tier stays at <b>120 minutes a month</b>. Pro is{" "}
-        <b>1,200 minutes at ₦16,500</b>; Business is 1,500 minutes per user at ₦28,500 per seat. The
+        <b>unlimited minutes at ₦16,500</b>; Business is unlimited minutes per seat at ₦28,500. The
         annual plan must ship before the Lagos cohort. Ghana and Kenya are billed in local currency
         at the day&rsquo;s rate, not converted at checkout.
       </p>

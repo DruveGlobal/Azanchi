@@ -185,7 +185,7 @@ export function ProductWindow() {
 
                 <div className="note__line">
                   <span className="note__tag">Decision</span>
-                  <span>Pro stays at ₦16,500 for 1,200 minutes.</span>
+                  <span>Pro stays at ₦16,500 — unlimited minutes.</span>
                 </div>
 
                 <div className="note__block">

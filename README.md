@@ -68,9 +68,9 @@ Sourced from the Azanchi app repo (`mitra-app`: `CONTEXT.md`, `src/locales/en.js
 `src/screens/pricing/PricingView.tsx`, the design brief and ADRs):
 
 - **Free** — 120 minutes/month; live notes, speaker-attributed transcript, one summary per meeting.
-- **Pro** — ₦16,500/month or ₦181,500/year; 1,200 minutes; action items, follow-up email,
+- **Pro** — ₦16,500/month or ₦181,500/year; unlimited minutes; action items, follow-up email,
   unlimited enhanced rewrites.
-- **Business** — ₦28,500/seat/month or ₦313,500/seat/year; 1,500 minutes per user, pooled;
+- **Business** — ₦28,500/seat/month or ₦313,500/seat/year; unlimited minutes per seat;
   shared workspace, seats, invoiced billing.
 - Paystack, with card / mobile money / bank transfer; ₦, GH₵ and KSh.
 - Google sign-in is live; Microsoft work accounts are described as coming (the app currently
